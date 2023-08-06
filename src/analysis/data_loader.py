@@ -101,7 +101,7 @@ class MusicLibrary:
             for genre in genre_in_genre[i]:
                 self.library_data.loc[i, [genre.lower()]] = 1
 
-    def music2pandasDataframe(self):
+    def music2pandas(self):
         self.list_song()
         self.add_genre_in_dataframe()
         return self.library_data
@@ -111,5 +111,5 @@ if __name__ == '__main__':
     library_musics = os.path.join(os.environ['HOMEPATH'], 'Music')
     #test = Music2pandas(library_music)
     music_library = MusicLibrary(library_musics)
-    dt = music_library.music2pandasDataframe()
+    dt = music_library.music2pandas()
     print(dt.head())
